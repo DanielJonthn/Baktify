@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home');
+Route::get('/home', function () {
+    return view('pages.homePage');
+});
 
-Route::get('/about-us');
+Route::get('/aboutus', function () {
+    return view('pages.aboutUs');
+});
 
 Route::get('/product');
 
