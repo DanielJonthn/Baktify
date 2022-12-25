@@ -5,21 +5,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <div class="d-flex align-items-center justify-content-between w-100">
-            <a class="ms-2 navbar-brand d-flex flex-column justify-content-center align-items-center ms-3" href="home">
+            <a class="ms-2 navbar-brand d-flex flex-column justify-content-center align-items-center ms-3" href="{{route('home')}}">
                 <img src="/assets/Logo.png" style="width: 40px" alt="">
                 <h6 class="">Baktify</h6>
             </a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="aboutus">About Us</a>
+                    <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
                 </li>
                 <li class="nav-item"></li>
-                    <a class="nav-link" href="product">Products</a>
+                    <a class="nav-link" href="{{route('product')}}">Products</a>
                 </li>
             </ul>
             <div class="me-3">
-                <a class="btn my-2 my-sm-0">Sign in</a>
-                <a class="btn btn-primary my-2 my-sm-0 py-2" style="border-radius: 50px">Sign up</a>
+                <a class="btn my-2 my-sm-0" href="{{route('login')}}">Sign in</a>
+                <a class="btn btn-primary my-2 my-sm-0 py-2" style="border-radius: 50px" href="{{route('register')}}">Sign up</a>
             </div>
         </div>
     </div>

@@ -19,29 +19,39 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('pages.homePage');
-});
+})->name('home');
 
 Route::get('/aboutus', function () {
     return view('pages.aboutUs');
-});
+})->name('aboutus');
 
 Route::get('/product', function () {
     return view('pages.productPage');
-});
+})->name('product');
 
-Route::get('/product/detail');
+Route::get('/product/detail', function () {
+    return view('pages.productDetail');
+})->name('productdetail');
 
-Route::get('/product/add');
+Route::get('/product/add', function () {
+    return view('pages.addProduct');
+})->name('addproduct');
 
-Route::get('/product/update');
+Route::get('/product/edit', function () {
+    return view('pages.editProduct');
+})->name('editproduct');
 
 Route::get('/add-category');
 
 Route::get('/profile');
 
-Route::get('/login');
+Route::get('/login', function () {
+    return view('pages.login');
+})->name('login');
 
-Route::get('/register');
+Route::get('/register', function () {
+    return view('pages.register');
+})->name('register');
 
 Route::get('/cart');
 
