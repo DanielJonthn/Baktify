@@ -1,6 +1,6 @@
 @extends('temp')
 
-
+@section('title', 'Home')
 {{-- Nggak pasti, tanyain dulu --}}
 <style>
     .linefade{
@@ -23,7 +23,6 @@
     <div class="d-flex justify-content-center my-5">
         <img src="/assets/HomeAlbum.jpg" style="width: 700px" alt="">
     </div>
-    
     
     {{-- Bottom Part --}}
     <div class="d-flex flex-column text-center my-5">

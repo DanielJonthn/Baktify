@@ -1,5 +1,7 @@
 @extends('temp')
 
+@section('title', 'About Us')
+
 @section('content')    
 {{-- Upper Part --}}
 <div class="container px-4 py-5">
