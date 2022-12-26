@@ -12,7 +12,6 @@
                 <th scope="col">PRICE</th>
                 <th scope="col" style="width: 20%">QUANTITY</th>
                 <th scope="col">SUBTOTAL</th>
-                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -34,9 +33,6 @@
                     </td>
                     <td>
                         IDR 8500000
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" href="">Update Cart</a>
                     </td>
                 </tr>
             </form>

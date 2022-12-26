@@ -9,9 +9,10 @@
   z-index: 1;
 }
 </style> -->
+
 @section('content')
 <!-- Member/Guest -->
-<!-- <div class="container">
+{{-- <div class="container">
 
     <div class="d-flex justify-content-between align-items-center my-5">
         <div>
@@ -31,20 +32,22 @@
                 <div class="card m-3" style="width: 18rem;">
                     <img src="/assets/UntilIFoundYou.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a class="stretched-link" href="asd"></a>
+                        <a class="stretched-link" href="{{route('productdetail')}}"></a>
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title" style="z-index: 1">Album Title</h5>
                             <p class="card-text" style="color: gray; z-index: 1">Price: Rp</p>
                             <p class="card-text bg-primary p-2" style="border-radius:50px; z-index: 1">Genre</p>
                         </div>
                         <hr>
-                        <a href="#" class="btn btn-primary m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Add to cart</a>
+                    <div class="d-flex" style="transform: (0)">
+                        <a href="{{route('cart')}}" class="btn btn-primary m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Add to cart</a>
+                    </div>
                     </div>
                 </div>
             </div>
             @endfor
         </div>
-</div> -->
+</div> --}}
 
 {{-- Admin --}}
 <div class="container">
@@ -68,7 +71,7 @@
                 <div class="card m-3" style="width: 18rem;">
                     <img src="/assets/UntilIFoundYou.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a class="stretched-link" href="product/detail"></a>
+                        <a class="stretched-link" href="{{route('productdetail')}}"></a>
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title" style="z-index: 1">Album Title</h5>
                             <p class="card-text" style="color: gray; z-index: 1">Price: Rp</p>

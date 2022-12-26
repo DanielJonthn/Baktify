@@ -44,7 +44,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-between align-items-center my-3">
-        <p class="btn btn-primary" href="{{route('checkout')}}">Check Out</p>
+        <a class="btn btn-primary" href="{{route('checkout')}}">Check Out</a>
         <p class="m-0">Total: IDR 12496125</p>
     </div>
 </div>

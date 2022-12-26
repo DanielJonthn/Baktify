@@ -8,7 +8,7 @@
     <div class="container w-50" style="">
         <h1 class="text-center my-5">Your Profile</h1>
         <div class="bg-light p-5 rounded my-5">
-            <form action="{{ route('register') }}" method="POST">
+            <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="username" class="form-label">Name</label>

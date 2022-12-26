@@ -54,15 +54,15 @@
                 <button type="submit" class="btn btn-primary">Request</button>
             </form> --}}
             
-            <div class="container my-5">
-                <form action="" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="ms-5 d-flex flex-row">
-                        <label for="name" class="form-label" style="width: 25%">Image</label>
-                        <input type="file" class="form-control w-75" id="name" name="name">
-                    </div>
-                    <div class="linefade my-5"></div>
-                    <div class="ms-5 d-flex flex-row">
+<div class="container my-5">
+    <form action="" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="ms-5 d-flex flex-row">
+        <label for="name" class="form-label" style="width: 25%">Image</label>
+        <input type="file" class="form-control w-75" id="name" name="name">
+    </div>
+    <div class="linefade my-5"></div>
+    <div class="ms-5 d-flex flex-row">
                         <label for="name" class="form-label" style="width: 25%">Product Name</label>
                         <input type="text" class="form-control w-75" id="name" name="name">
                     </div>

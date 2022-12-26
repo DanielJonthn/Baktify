@@ -3,16 +3,15 @@
 @section('title', 'Check Out')
 
 @section('content') 
-
-<div class="container">
-    <table class="table align-middle">
+<div class="container my-5 ">
+    <h1>Your Cart</h1>
+    <table class="mt-3 table align-middle">
         <thead class="table-secondary">
             <tr>
                 <th scope="col">PRODUCT</th>
                 <th scope="col">PRICE</th>
                 <th scope="col" style="width: 20%">QUANTITY</th>
                 <th scope="col">SUBTOTAL</th>
-                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -34,9 +33,6 @@
                     </td>
                     <td>
                         IDR 8500000
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" href="">Update Cart</a>
                     </td>
                 </tr>
             </form>
