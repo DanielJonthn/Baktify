@@ -62,6 +62,7 @@
             </div>
         </div>
     </div>
+
     {{-- Location --}}
     <div class="container py-4">
         <div class="row gy-4 gx-5">

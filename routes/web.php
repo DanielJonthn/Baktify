@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/checkout', function() {
+    return view('pages.checkOut');
+})->name('checkout');
+
 Route::get('/home', function () {
     return view('pages.homePage');
 })->name('home');
@@ -41,9 +45,17 @@ Route::get('/product/edit', function () {
     return view('pages.editProduct');
 })->name('editproduct');
 
-Route::get('/add-category');
+Route::get('/addcategory', function () {
+    return view('pages.addCategory');
+})->name('addcategory');
 
-Route::get('/profile');
+Route::get('/profile', function () {
+    return view('pages.profile');
+})->name('profile');
+
+Route::get('/editprofile', function () {
+    return view('pages.editProfile');
+})->name('editprofile');
 
 Route::get('/login', function () {
     return view('pages.login');
@@ -53,8 +65,12 @@ Route::get('/register', function () {
     return view('pages.register');
 })->name('register');
 
-Route::get('/cart');
+Route::get('/cart', function () {
+    return view('pages.cart');
+})->name('cart');
 
 Route::get('/cart/check-out');
 
-Route::get('/transaction');
+Route::get('/transaction', function () {
+    return view('pages.transaction');
+})->name('transaction');

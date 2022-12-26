@@ -1,12 +1,12 @@
 @extends('temp')
 
-@section('title', 'Register')
+@section('title', 'Edit Profile')
 
-@section('content')   
+@section('content') 
 
 <div class="d-flex justify-content-center align-items-center" style="height: auto">
     <div class="container w-50" style="">
-        <h1 class="text-center my-5">Create Your Account</h1>
+        <h1 class="text-center my-5">Update your profile</h1>
         <div class="bg-light p-5 rounded my-5">
             <form action="{{ route('register') }}" method="POST">
                 @csrf
@@ -16,7 +16,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" readonly>
                 </div>
                 <div class="d-flex">
                     <div class="mb-3 me-5">
@@ -44,9 +44,9 @@
                     @endif
                   </div>
                   <hr>
-                <div class="w-100 d-flex justify-content-between align-items-center">
-                    <p class="m-0">Already have an account? <a class="text-decoration-none" href="{{ route('login') }}">Login here!</a></p>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
+                <div class="w-100 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-primary mx-3" href="#">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>

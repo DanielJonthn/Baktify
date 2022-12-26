@@ -14,7 +14,6 @@
 </style>
 
 @section('content')
-
 <div class="container my-5">
     <div class="my-5 ms-5">
         <h2>Come On Over</h2>
@@ -22,6 +21,8 @@
     <div class=" my-5 w-100 d-flex justify-content-center align-items-center">
         <img src="/assets/UntilIFoundYou.png" class="card-img-top img-fluid w-25" alt="...">
     </div>
+
+    {{-- Form --}}
     <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="ms-5 d-flex flex-row">
