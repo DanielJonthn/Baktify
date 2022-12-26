@@ -22,20 +22,20 @@
                 <h3>Get in touch</h3>
             </div>
             <div class="col-lg-4">
-                <h3 class="mb-2">Sales Inquiry</h3>
+                <h3 class="mb-2">Jonathan</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>sales@baktify.com</span>
-                        <span>+62 1231 1231</span>
+                        <span>jonathan@baktify.com</span>
+                        <span>+62 812 1231 8316</span>
                     </li>
                 </ul>
             </div>
             <div class="col">
-                <h3 class="mb-2">Sales Inquiry</h3>
+                <h3 class="mb-2">Daniel</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>sales@baktify.com</span>
-                        <span>+62 1231 1231</span>
+                        <span>daniel@baktify.com</span>
+                        <span>+62 861 6197 9126</span>
                     </li>
                 </ul>
             </div>
@@ -43,20 +43,20 @@
         <div class="row gy-4 gx-5">
             <div class="ms-5 col-lg-4 col-md-6"></div>
             <div class="col-lg-4">
-                <h3 class="mb-2">Sales Inquiry</h3>
+                <h3 class="mb-2">Ryan</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>sales@baktify.com</span>
-                        <span>+62 1231 1231</span>
+                        <span>ryan@baktify.com</span>
+                        <span>+62 801 6548 3480</span>
                     </li>
                 </ul>
             </div>
             <div class="col">
-                <h3 class="mb-2">Sales Inquiry</h3>
+                <h3 class="mb-2">To</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>sales@baktify.com</span>
-                        <span>+62 1231 1231</span>
+                        <span>to@baktify.com</span>
+                        <span>+62 813 1546 5468</span>
                     </li>
                 </ul>
             </div>
@@ -79,11 +79,11 @@
                 </ul>
             </div>
             <div class="col">
-                <h3 class="mb-2">Jakarta</h3>
+                <h3 class="mb-2">Osaka</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>Jl. Rawa Belong No. 420</span>
-                        <span>11420</span>
+                        <span>1 Chome-9-1 Sennichimae, Chuo Ward</span>
+                        <span>542-0074</span>
                     </li>
                 </ul>
             </div>
@@ -91,20 +91,20 @@
         <div class="row gy-4 gx-5">
             <div class="ms-5 col-lg-4 col-md-6"></div>
             <div class="col-lg-4">
-                <h3 class="mb-2">Jakarta</h3>
+                <h3 class="mb-2">California</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>Jl. Rawa Belong No. 420</span>
-                        <span>11420</span>
+                        <span>Pier 39 D, 3, San Francisco</span>
+                        <span>94133</span>
                     </li>
                 </ul>
             </div>
             <div class="col">
-                <h3 class="mb-2">Jakarta</h3>
+                <h3 class="mb-2">Seoul</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
-                        <span>Jl. Rawa Belong No. 420</span>
-                        <span>11420</span>
+                        <span>J24, Changhae-ro 14beon-gil, Gangneung</span>
+                        <span>25556</span>
                     </li>
                 </ul>
             </div>

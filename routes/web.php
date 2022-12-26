@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,21 +30,23 @@ Route::get('/aboutus', function () {
     return view('pages.aboutUs');
 })->name('aboutus');
 
-Route::get('/product', function () {
-    return view('pages.productPage');
-})->name('product');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
 
-Route::get('/product/detail', function () {
-    return view('pages.productDetail');
-})->name('productdetail');
+Route::get('/product/detail/{id}', [ProductController::class, 'showDetail'])->name('productdetail');
 
-Route::get('/product/add', function () {
-    return view('pages.addProduct');
-})->name('addproduct');
+// Route::get('/product/add', function () {
+//     return view('pages.addProduct');
+// })->name('addproduct');
 
-Route::get('/product/edit', function () {
-    return view('pages.editProduct');
-})->name('editproduct');
+Route::get('product/add', [ProductController::class, 'addProduct'])->name('addproduct');
+
+Route::post('product/add', [ProductController::class, 'insertProduct'])->name('insertproduct');
+
+Route::get('/product/edit/{id}', [ProductController::class, 'editProduct'])->name('editproduct');
+
+Route::post('/product/edit/{id}', [ProductController::class, 'submitProduct'])->name('submitproduct');
+
+Route::get('/product/remove/{id}', [ProductController::class, 'removeProduct'])->name('removeproduct');
 
 Route::get('/addcategory', function () {
     return view('pages.addCategory');

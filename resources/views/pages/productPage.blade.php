@@ -66,26 +66,26 @@
     </div>
 
         <div class="row row-cols-4">
-            @for($i = 0;$i < 10; $i++)
+            @foreach ($products as $product)
             <div class="col">
                 <div class="card m-3" style="width: 18rem;">
-                    <img src="/assets/UntilIFoundYou.png" class="card-img-top" alt="...">
+                    <img src="/assets/{{$product->image}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a class="stretched-link" href="{{route('productdetail')}}"></a>
+                        <a class="stretched-link" href="{{route('productdetail', $product->id)}}"></a>
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title" style="z-index: 1">Album Title</h5>
-                            <p class="card-text" style="color: gray; z-index: 1">Price: Rp</p>
-                            <p class="card-text bg-primary p-2" style="border-radius:50px; z-index: 1">Genre</p>
+                            <h6 class="card-title" style="z-index: 1">{{$product->name}}</h6>
+                            <p class="card-text" style="color: gray; z-index: 1">IDR {{$product->price}}</p>
+                            <p class="card-text text-white bg-primary p-2 px-3" style="border-radius:50px; z-index: 1; font-size: 80%;">{{$product->category->name}}</p>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between" style="transform: (0)">
-                            <a href="{{route('editproduct')}}" class="btn btn-primary m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Edit Product</a>
-                            <a href="#" class="btn btn-danger m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Remove Product</a>
+                            <a href="{{route('editproduct', $product->id)}}" class="btn btn-primary m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Edit Product</a>
+                            <a href="{{route('removeproduct', $product->id)}}" class="btn btn-danger m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Remove Product</a>
                         </div>
                     </div>
                 </div>
             </div>
-            @endfor
+            @endforeach
         </div>
 </div>
 @endsection

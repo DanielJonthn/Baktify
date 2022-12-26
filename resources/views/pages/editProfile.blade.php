@@ -2,8 +2,7 @@
 
 @section('title', 'Edit Profile')
 
-@section('content') 
-
+@section('content')
 <div class="d-flex justify-content-center align-items-center" style="height: auto">
     <div class="container w-50" style="">
         <h1 class="text-center my-5">Update your profile</h1>

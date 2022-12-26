@@ -14,7 +14,7 @@
 </style>
 
 @section('content')
-                {{-- <form action="{{ route('addproduct') }}" method="POST" enctype="multipart/form-data">
+                {{-- <form action="{{ route('insertproduct') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Job Name</label>
@@ -55,38 +55,41 @@
             </form> --}}
             
 <div class="container my-5">
-    <form action="" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="ms-5 d-flex flex-row">
-        <label for="name" class="form-label" style="width: 25%">Image</label>
-        <input type="file" class="form-control w-75" id="name" name="name">
-    </div>
-    <div class="linefade my-5"></div>
-    <div class="ms-5 d-flex flex-row">
+                <form action="{{ route('insertproduct') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                    <div class="ms-5 d-flex flex-row">
+                        <label for="image" class="form-label" style="width: 25%">Image</label>
+                    <input type="file" class="form-control w-75" id="image" name="image">
+                    </div>
+                    <div class="linefade my-5"></div>
+                    <div class="ms-5 d-flex flex-row">
                         <label for="name" class="form-label" style="width: 25%">Product Name</label>
                         <input type="text" class="form-control w-75" id="name" name="name">
                     </div>
                     <div class="linefade my-5"></div>
                     <div class="ms-5 d-flex flex-row">
-                        <label for="name" class="form-label" style="width: 25%">Description</label>
+                        <label for="description" class="form-label" style="width: 25%">Description</label>
                         <textarea type="text" class="form-control w-75" id="description" name="description" aria-describedby="descriptionHelp"></textarea>
                     </div>
                     <div class="linefade my-5"></div>
                     <div class="ms-5 d-flex flex-row">
-                        <label for="name" class="form-label" style="width: 25%">Price</label>
-                        <input type="text" class="form-control w-75" id="name" name="name">
+                        <label for="price" class="form-label" style="width: 25%">Price</label>
+                        <input type="text" class="form-control w-75" id="price" name="price">
                     </div>
                     <div class="linefade my-5"></div>
                     <div class="ms-5 d-flex flex-row">
-                        <label for="name" class="form-label" style="width: 25%">Product Quantity</label>
-                        <input type="text" class="form-control w-75" id="name" name="name">
+                        <label for="stock" class="form-label" style="width: 25%">Product Quantity</label>
+                        <input type="text" class="form-control w-75" id="stock" name="stock">
                     </div>
                     <div class="linefade my-5"></div>
                     <div class="ms-5 d-flex flex-row">
-                        <label for="name" class="form-label" style="width: 25%">Category Name</label>
+                        <label for="category" class="form-label" style="width: 25%">Category Name</label>
                         <select class="form-select w-75" id="category" name="category" aria-label="Default select example">
-                        <option selected>Job Category</option>
-                          <option value="">Country</option>
+                            <?php $categories = DB::table('categories')->get(); ?>
+                        <option selected>Category</option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
                     </select>
                 </div>
                 <div class="linefade my-5"></div>
@@ -95,5 +98,5 @@
                         <a class="btn btn-danger" href="">Cancel</a>
                     </div>
                 </form>
-            </div> 
+</div> 
 @endsection
