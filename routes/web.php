@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,25 +50,33 @@ Route::post('/product/edit/{id}', [ProductController::class, 'submitProduct'])->
 
 Route::get('/product/remove/{id}', [ProductController::class, 'removeProduct'])->name('removeproduct');
 
-Route::get('/addcategory', function () {
-    return view('pages.addCategory');
-})->name('addcategory');
+Route::get('/addcategory', [CategoryController::class, 'addCategory'])->name('addcategory');
 
-Route::get('/profile', function () {
-    return view('pages.profile');
-})->name('profile');
+Route::post('/addcategory', [CategoryController::class, 'insertCategory'])->name('insertcategory');
 
-Route::get('/editprofile', function () {
-    return view('pages.editProfile');
-})->name('editprofile');
+Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
-Route::get('/login', function () {
-    return view('pages.login');
-})->name('login');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
-Route::get('/register', function () {
-    return view('pages.register');
-})->name('register');
+Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editprofile');
+
+Route::post('/editprofile', [UserController::class, 'submitEdit'])->name('submitedit');
+
+// Route::get('/login', function () {
+//     return view('pages.login');
+// })->name('login');
+
+// Route::get('/register', function () {
+//     return view('pages.register');
+// })->name('register');
+
+Route::get('/register', [UserController::class,'register'])->name('register');
+
+Route::post('/register', [UserController::class,'submitRegister'])->name('submitregister');
+
+Route::get('/login', [UserController::class,'login'])->name('login');
+
+Route::post('/login',[UserController::class,'submitLogin'])->name('submitLogin');
 
 Route::get('/cart', function () {
     return view('pages.cart');

@@ -24,20 +24,20 @@
                       <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="mb-3 ms-5">
-                      <label for="password" class="form-label">Confirm Password</label>
+                      <label for="confirm" class="form-label">Confirm Password</label>
                       <input type="password" class="form-control" id="confirm" name="confirm">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="name" class="form-label" style="width: 25%">Address</label></label>
-                    <textarea type="text" class="form-control" id="description" name="description" aria-describedby="descriptionHelp"></textarea>
+                    <label for="address" class="form-label" style="width: 25%">Address</label></label>
+                    <textarea type="text" class="form-control" id="address" name="address" aria-describedby="descriptionHelp"></textarea>
                     <p class="" style="color: gray">Please write your actual address where you can receive mail</p>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Phone</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp">
                   </div>
-                
+
                   <div class="mb-2">
                     @if($errors->any())
                     <p class="text-danger">{{ $errors->first() }}</p>
@@ -46,11 +46,10 @@
                   <hr>
                 <div class="w-100 d-flex justify-content-between align-items-center">
                     <p class="m-0">Already have an account? <a class="text-decoration-none" href="{{ route('login') }}">Login here!</a></p>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <button type="submit" class="btn text-white" style="background-color: #5e5df0">Create Account</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
 @endsection

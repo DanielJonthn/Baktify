@@ -12,8 +12,8 @@
             <div class="mt-4 d-flex flex-column justify-content-start align-items-start w-100">
                 <h2 class="">{{$productDetail->name}}</h2>
                 <p class="card-text mt-3" style="color: gray;">{{$productDetail->description}}</p>
-                <p class="card-text" style="color: gray;">{{$productDetail->stock}}</p>
-                <p class="card-text" style="color: gray;">{{$productDetail->category->name}}</p>
+                <p class="card-text" style="color: gray;">Stock: {{$productDetail->stock}}</p>
+                <p class="card-text" style="color: gray;">Category: {{$productDetail->category->name}}</p>
             </div>
         </div>
     </div>

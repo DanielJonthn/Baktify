@@ -1,5 +1,5 @@
 {{-- Guest Navbar --}}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 10px 10px">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +19,7 @@
             </ul>
             <div class="me-3">
                 <a class="btn my-2 my-sm-0" href="{{route('login')}}">Sign in</a>
-                <a class="btn btn-primary my-2 my-sm-0 py-2" style="border-radius: 50px" href="{{route('register')}}">Sign up</a>
+                <a class="btn text-white my-2 my-sm-0 py-2 px-3" style="border-radius: 50px; background-color: #5e5df0" href="{{route('register')}}">Sign up</a>
             </div>
         </div>
     </div>

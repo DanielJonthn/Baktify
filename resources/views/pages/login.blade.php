@@ -7,7 +7,7 @@
     <div class="container w-50" style="">
         <h1 class="text-center my-5">Sign In To Your Account</h1>
         <div class="bg-light p-5 rounded my-5">
-            <form action="{{ route('register') }}" method="POST">
+            <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
@@ -27,14 +27,13 @@
                     <label for="">Remember Email</label>
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="py-2 w-100 btn btn-primary">Sign In</button>
+                    <button type="submit" class="py-2 w-100 btn text-white" style="background-color: #5e5df0">Sign In</button>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
                     <div style="width: 100%; border-bottom: 1px solid black; margin: auto"></div>
                     <p class="m-0 mx-3">Or</p>
                     <div style="width: 100%; border-bottom: 1px solid black; margin: auto"></div>
                 </div>
-
                 <div class="mt-3">
                     <a type="submit" class="py-2 w-100 btn btn-outline-secondary" href="{{ route('register') }}">Register</a>
                 </div>

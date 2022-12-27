@@ -17,6 +17,22 @@ class CategoryController extends Controller
         //
     }
 
+    public function addCategory(){
+        $categories = Category::all();
+        return view('pages.addCategory', compact('categories'));
+    }
+
+    public function insertCategory(Request $request){
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $newCategory = new Category();
+        $newCategory->name = $request->input('name');
+        $newCategory->save();
+
+        return redirect()->route('product');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

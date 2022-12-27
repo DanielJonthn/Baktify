@@ -22,20 +22,20 @@
                 <h3>Get in touch</h3>
             </div>
             <div class="col-lg-4">
-                <h3 class="mb-2">Jonathan</h3>
-                <ul class="list-unstyled text-muted">
-                    <li class="d-flex flex-column">
-                        <span>jonathan@baktify.com</span>
-                        <span>+62 812 1231 8316</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col">
                 <h3 class="mb-2">Daniel</h3>
                 <ul class="list-unstyled text-muted">
                     <li class="d-flex flex-column">
                         <span>daniel@baktify.com</span>
                         <span>+62 861 6197 9126</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3 class="mb-2">Jonathan</h3>
+                <ul class="list-unstyled text-muted">
+                    <li class="d-flex flex-column">
+                        <span>jonathan@baktify.com</span>
+                        <span>+62 812 1231 8316</span>
                     </li>
                 </ul>
             </div>

@@ -15,6 +15,7 @@
 
 @section('content')    
 <div>
+    {{-- {{dd(Auth::check())}} --}}
     {{-- Upper Part --}}
     <div class="d-flex justify-content-center my-5">
         <h1 class="text-wrap text-center" style="width: 300px">Level Up Your Music Collection</h1>
