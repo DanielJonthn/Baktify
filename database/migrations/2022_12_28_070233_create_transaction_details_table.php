@@ -13,11 +13,12 @@ class CreateTransactionDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaction_details', function (Blueprint $table) {
+        Schema::create('transaction_detail', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->datetime('date');
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateTransactionDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaction_details');
+        Schema::dropIfExists('transaction_detail');
     }
 }

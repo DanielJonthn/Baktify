@@ -29,8 +29,8 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8|max:20',
             'confirm' => 'required|same:password',
-            'address' => 'required',
-            'phone' => 'required'
+            'address' => 'required|min:15',
+            'phone' => 'required|min:11'
         ]);
 
         $newUser = new User();
@@ -79,12 +79,12 @@ class UserController extends Controller
     public function submitEdit(){
         $user = User::findOrFail(Auth::user()->id);
         $data = request()->validate([
-            'username' => 'required',
+            'username' => 'required|max:255',
             'email' => 'required|email',
             'password' => 'required|min:8|max:20',
             'confirm' => 'required|same:password',
-            'address' => 'required',
-            'phone' => 'required'
+            'address' => 'required|min:15',
+            'phone' => 'required|min:11'
         ]);
 
         $updateData = [
@@ -95,7 +95,7 @@ class UserController extends Controller
         ];
         $user->update($updateData);
 
-        return redirect()->route('profile');
+        return redirect()->route('profile')->with('alert', 'Success Update Profile');
     }
 
     

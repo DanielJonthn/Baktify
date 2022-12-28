@@ -13,14 +13,14 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('product_transaction_detail', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transactionDetail_id');
+            $table->unsignedBigInteger('transaction_detail_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
 
-            $table->foreign('transactionDetail_id')->references('id')->on('transaction_details');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('transaction_detail_id')->references('id')->on('transaction_detail')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('product_transaction_detail');
     }
 }

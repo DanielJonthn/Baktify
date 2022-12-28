@@ -9,5 +9,5 @@ class Transaction extends Model
 {
     use HasFactory;
     public $timestamps = false;
-
+    protected $table = "product_transaction_detail";
 }

@@ -19,7 +19,7 @@
         <h2>{{$product->name}}</h2>
     </div>
     <div class=" my-5 w-100 d-flex justify-content-center align-items-center">
-        <img src="/assets/{{$product->image}}" class="card-img-top img-fluid w-25" alt="...">
+        <img src="{{('/storage/images/'.$product->image)}}" class="card-img-top img-fluid w-25" alt="...">
     </div>
 
     {{-- Form --}}
@@ -45,11 +45,15 @@
             <input type="text" class="form-control w-75" id="stock" name="stock" value="{{ old('stock', $product->stock) }}">
         </div>
     <div class="linefade my-5"></div>
-    <div class="my-3 ">
+    <div class="my-3">
         @if($errors->any())
-        <p class="text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">{{ $errors->first() }}</p>
-        @endif
-    </div>
+       <div class="d-flex flex-column text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">
+           @foreach($errors->all() as $error)
+           <p class="m-0">{{ $error }}</p>
+           @endforeach
+       </div>
+       @endif 
+   </div>
         <div class="ms-5">
             <button type="submit" style="width: 100px; background-color: #5da5f0" class="btn text-white me-3 px-4">Update</button>
             <a class="btn btn-danger text-white px-4" style="width: 100px" href="{{route('product')}}">Cancel</a>

@@ -13,23 +13,23 @@ class TransactionSeeder extends Seeder
      */
     public function run(){
         Transaction::insert([
-            'transactionDetail_id' => '1',
+            'transaction_detail_id' => '1',
             'product_id' => '1',
             'quantity' => '3'
         ]);
         Transaction::insert([
-            'transactionDetail_id' => '1',
+            'transaction_detail_id' => '1',
             'product_id' => '2',
             'quantity' => '5'
         ]);
 
         Transaction::insert([
-            'transactionDetail_id' => '2',
+            'transaction_detail_id' => '2',
             'product_id' => '9',
             'quantity' => '8'
         ]);
         Transaction::insert([
-            'transactionDetail_id' => '2',
+            'transaction_detail_id' => '2',
             'product_id' => '6',
             'quantity' => '1'
         ]);

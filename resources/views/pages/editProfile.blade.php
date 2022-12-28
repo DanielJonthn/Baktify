@@ -37,11 +37,15 @@
                     <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" value="{{ Auth::user()->phone }}">
                   </div>
 
-                  <div class="mb-2">
+                  <div class="my-3">
                     @if($errors->any())
-                    <p class="text-danger">{{ $errors->first() }}</p>
-                    @endif
-                  </div>
+                   <div class="d-flex flex-column text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">
+                       @foreach($errors->all() as $error)
+                       <p class="m-0">{{ $error }}</p>
+                       @endforeach
+                   </div>
+                   @endif 
+               </div>
                   <hr>
                 <div class="w-100 d-flex justify-content-end align-items-center">
                     <a class="btn text-white px-3 mx-3" style="background-color: #5e5df0" href="{{ route('profile') }}">Cancel</a>
@@ -51,5 +55,5 @@
         </div>
     </div>
 </div>
-
+    
 @endsection

@@ -22,7 +22,7 @@ class TransactionDetailController extends Controller
     }
 
     public function getTransaction(){
-        $transactions = DB::table('transaction_details')->where('user_id', 'LIKE', Auth::user()->id)->get();
+        $transactions = DB::table('transaction_detail')->where('user_id', 'LIKE', Auth::user()->id)->get();
         $transactions2 = Transaction::all();
         $user = User::findOrFail(Auth::user()->id);
         return view('pages.transaction', compact('user'));

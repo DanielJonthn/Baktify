@@ -93,10 +93,14 @@
                     </select>
                 </div>
                 <div class="linefade my-5"></div>
-                <div class="my-3 ">
-                    @if($errors->any())
-                    <p class="text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">{{ $errors->first() }}</p>
-                    @endif
+                <div class="my-3">
+                     @if($errors->any())
+                    <div class="d-flex flex-column text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">
+                        @foreach($errors->all() as $error)
+                        <p class="m-0">{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif 
                 </div>
                     <div>
                         <button type="submit" class="btn px-4 text-white" style="background-color: #5da5f0">Insert</button>
@@ -104,4 +108,9 @@
                     </div>
                 </form>
 </div> 
+<script>
+    if('{{Session::has('alert')}}'){
+        alert('{{Session::get('alert')}}');
+    }
+  </script>
 @endsection

@@ -14,15 +14,18 @@ class TransactionDetailSeeder extends Seeder
     public function run()
     {
         TransactionDetail::insert([
-            'user_id' => '2'
+            'user_id' => '2',
+            'date' => '2022-08-11'
         ]);
 
         TransactionDetail::insert([
-            'user_id' => '2'
+            'user_id' => '2',
+            'date' => '2022-08-12'
         ]);
 
         TransactionDetail::insert([
-            'user_id' => '1'
+            'user_id' => '1',
+            'date' => '2022-08-13'
         ]);
     }
 }

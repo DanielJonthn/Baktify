@@ -25,7 +25,7 @@
                     <!-- <th scope="row">1</th> -->
                     <td class="">
                         <div class="d-flex align-items-center">
-                            <img src="/assets/{{$product->image}}" class="img-fluid" style="max-width: 50px; border-radius: 500px" alt="">
+                            <img src="{{('/storage/images/'.$product->image)}}" class="img-fluid" style="max-width: 50px; border-radius: 500px" alt="">
                             <p class="m-0 ms-3">{{ $product->name }}</p>
                         </div>
                     </td>
@@ -68,7 +68,7 @@
                 <p class="m-0 mb-2 me-5">Please enter the following passcode to checkout: {{$passcode}}</p>
                 <input type="text" class="form-control mb-2 w-100" id="pass" name="pass">
                 @if($errors->any())
-                    <p class="text-danger">{{ $errors->first() }}</p>
+                    <p class="text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">{{ $errors->first() }}</p>
                 @endif
                 <button type="submit" class="btn btn-primary w-100" href="#">Confirm</button>
             </form>
@@ -80,5 +80,5 @@
     if('{{Session::has('alert')}}'){
         alert('{{Session::get('alert')}}');
     }
-  </script>
+</script>
 @endsection

@@ -72,5 +72,11 @@
         </div>
     </div>
 
+    <script>
+    if('{{Session::has('alert')}}'){
+        alert('{{Session::get('alert')}}');
+    }
+  </script>
+
 </div>
 @endsection

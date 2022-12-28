@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     {
         Product::insert([
             'name' => 'All My Tears',
-            'description' => 'desc',
+            'description' => '"All My Tears", a song by Julie Miller with Emmylou Harris, also covered by Harris and separately covered by jazz vocalist Jimmy Scott and later on by Norwegian artist Ane Brun',
             'price' => '22000',
             'stock' => '15',
             'image' => 'AllMyTears.png',
@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Bohemian Rhapsody',
-            'description' => 'desc',
+            'description' => '"Bohemian Rhapsody" is a song by the British rock band Queen, released as the lead single from their fourth album, A Night at the Opera (1975).',
             'price' => '25000',
             'stock' => '14',
             'image' => 'BohemianRhapsody.png',
@@ -31,7 +31,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Dandelions',
-            'description' => 'desc',
+            'description' => '"Dandelions" is a song by Canadian singer Ruth B., originally released as a promotional single from her 2017 album Safe Haven.',
             'price' => '23000',
             'stock' => '15',
             'image' => 'Dandelions.png',
@@ -39,7 +39,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Father and Son',
-            'description' => 'desc',
+            'description' => '"Father and Son" is a popular song written and performed by English singer-songwriter Cat Stevens (now known as Yusuf Islam/Cat Stevens) on his 1970 album Tea for the Tillerman.',
             'price' => '25000',
             'stock' => '11',
             'image' => 'FatherAndSon.png',
@@ -47,7 +47,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Frankenstein',
-            'description' => 'desc',
+            'description' => '"Frankenstein" is a song by American singer Claire Rosinkranz from her 2021 album 6 Of A Billion.',
             'price' => '20000',
             'stock' => '12',
             'image' => 'Frankenstein.png',
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Hotel California',
-            'description' => 'desc',
+            'description' => '"Hotel California" is the title track from the Eagles album of the same name and was released as a single in February 1977.',
             'price' => '22000',
             'stock' => '12',
             'image' => 'HotelCalifornia.png',
@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Imagine',
-            'description' => 'desc',
+            'description' => '"Imagine" is a song by English rock musician John Lennon from his 1971 album of the same name.',
             'price' => '20000',
             'stock' => '11',
             'image' => 'Imagine.jpg',
@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Let It Be',
-            'description' => 'desc',
+            'description' => '"Let It Be" is the twelfth and final studio album by the English rock band the Beatles. It was released on 8 May 1970, almost a month after the group public break-up.',
             'price' => '30000',
             'stock' => '17',
             'image' => 'LetItBe.jpg',
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Love Of My Life',
-            'description' => 'desc',
+            'description' => '"Love of My Life" is a song by the British rock band Queen from their 1975 album A Night at the Opera.',
             'price' => '25000',
             'stock' => '16',
             'image' => 'LoveOfMyLife.jpg',
@@ -87,7 +87,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Sweet Child O Mine',
-            'description' => 'desc',
+            'description' => '"Sweet Child o Mine" is a song by American rock band Guns N Roses. It appears on their debut album, Appetite for Destruction.',
             'price' => '21000',
             'stock' => '13',
             'image' => 'SweetChildOMine.png',
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Tears In Heaven',
-            'description' => 'desc',
+            'description' => '"Tears in Heaven" is a song by English guitarist, singer, and songwriter Eric Clapton and Will Jennings, written about the death of Claptons four-year-old son, Conor.',
             'price' => '21000',
             'stock' => '14',
             'image' => 'TearsInHeaven.jpg',
@@ -103,7 +103,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'The House Of The Rising Sun',
-            'description' => 'desc',
+            'description' => '"The House of the Rising Sun" is a traditional folk song, sometimes called "Rising Sun Blues". It tells of a persons life gone wrong in the city of New Orleans.',
             'price' => '20000',
             'stock' => '16',
             'image' => 'TheHouseOfTheRisingSun.jpg',
@@ -111,7 +111,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Until I Found You',
-            'description' => 'desc',
+            'description' => '"Until I Found You" is a song by American singer-songwriter Stephen Sanchez, released on September 1, 2021.',
             'price' => '25000',
             'stock' => '15',
             'image' => 'UntilIFoundYou.png',
@@ -119,7 +119,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'What A Wonderful World',
-            'description' => 'desc',
+            'description' => '"What a Wonderful World" is a song written by Bob Thiele (as "George Douglas") and George David Weiss. It was first recorded by Louis Armstrong and released in 1967 as a single.',
             'price' => '22000',
             'stock' => '10',
             'image' => 'WhatAWonderfulWorld.jpg',
@@ -127,7 +127,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::insert([
             'name' => 'Wonderful Tonight',
-            'description' => 'desc',
+            'description' => '"Wonderful Tonight" is a ballad written by Eric Clapton. It was included on Claptons 1977 album Slowhand. Clapton wrote the song about Pattie Boyd.',
             'price' => '23000',
             'stock' => '11',
             'image' => 'WonderfulTonight.jpg',

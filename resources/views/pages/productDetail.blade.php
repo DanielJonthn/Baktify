@@ -6,7 +6,7 @@
 <div class="container w-25">
     <div class="my-5 d-flex flex-column align-items-center">
         <div class="w-100">
-            <img src="/assets/{{$productDetail->image}}" class="card-img-top img-fluid" alt="...">
+            <img src="{{('/storage/images/'.$productDetail->image)}}" class="card-img-top img-fluid" alt="...">
         </div>
         <div class="w-100">
             <div class="mt-4 d-flex flex-column justify-content-start align-items-start w-100">

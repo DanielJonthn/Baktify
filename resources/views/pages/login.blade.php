@@ -17,11 +17,15 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
-                <div class="mb-2">
+                <div class="my-3">
                     @if($errors->any())
-                    <p class="text-danger">{{ $errors->first() }}</p>
-                    @endif
-                </div>
+                   <div class="d-flex flex-column text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">
+                       @foreach($errors->all() as $error)
+                       <p class="m-0">{{ $error }}</p>
+                       @endforeach
+                   </div>
+                   @endif 
+               </div>
                 <div class="mb-3">
                     <input type="checkbox">
                     <label for="">Remember Email</label>
