@@ -15,28 +15,32 @@
             </tr>
         </thead>
         <tbody>
-            @for($i = 1; $i <= 5; $i++)
-            <form>
+        @if (session('CART'.Auth::user()->id))
+            @foreach (session('CART'.Auth::user()->id) as $id => $details)
+            <?php $product = DB::table('products')->where('id', $details['id'])->first();?>
+            <?php $total += $product->price * $details['quantity'] ?>
+            <form action="/updateCart/{{$product->id}}">
                 <tr class="">
                     <!-- <th scope="row">1</th> -->
                     <td class="">
                         <div class="d-flex align-items-center">
-                            <img src="/assets/UntilIFoundYou.png" class="img-fluid" style="max-width: 50px; border-radius: 500px" alt="">
-                            <p class="m-0 ms-3">Until I Found You</p>
+                            <img src="/assets/{{$product->image}}" class="img-fluid" style="max-width: 50px; border-radius: 500px" alt="">
+                            <p class="m-0 ms-3">{{ $product->name }}</p>
                         </div>
                     </td>
                     <td>
-                        IDR 70000
+                        {{ $product->price }}
                     </td>
                     <td>
-                        <input type="text" class="form-control" style="width: 40%" id="number" name="number">
+                        <input type="text" class="form-control" style="width: 40%" id="number" name="number" value="{{ $details['quantity'] }}" readonly>
                     </td>
                     <td>
-                        IDR 8500000
+                        {{ $product->price * $details['quantity'] }}
                     </td>
                 </tr>
             </form>
-                @endfor
+            @endforeach
+            @endif
         </tbody>
     </table>
     <div class="d-flex justify-content-between align-items-center my-3">

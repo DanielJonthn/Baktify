@@ -25,6 +25,10 @@ class User extends Authenticatable
         'phone'
     ];
 
+    public function transaction(){
+        return $this->hasMany(TransactionDetail::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

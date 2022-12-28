@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -79,6 +80,49 @@ class ProductController extends Controller
         return redirect()->route('product');
     }
 
+    public function addToCart($id){
+        $product = Product::findOrFail($id);
+
+        $cart = session()->get('CART'.Auth::user()->id);
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                // "name" => $product->name,
+                "id" => $id,
+                "quantity" => 1
+                // "price" => $product->price,
+                // "image" => $product->image
+            ];
+        }
+        session()->put('CART'.Auth::user()->id, $cart);
+
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
+
+    public function updateCart($id, Request $request){
+        if($request->number == 0){
+                $cart = session()->get('CART'.Auth::user()->id);
+                    unset($cart[$id]);
+                    session()->put('CART'.Auth::user()->id, $cart);
+        }
+        else{
+            $cart = session()->get('CART'.Auth::user()->id);
+            $cart[$id]["quantity"] = $request->number;
+            session()->put('CART'.Auth::user()->id, $cart);
+        }
+        return redirect()->back();
+    }
+
+    public function checkout($pass, Request $request){
+        if($pass != $request->pass){
+            return redirect()->back()->withErrors('Passcode does not match');
+        }
+        else{
+            // return redirect()->back()->withErrors('Passcode matches');
+            return redirect()->back()->with('alert', 'You will receive our products soon! Thank you for shopping with us!');
+        }
+    }
 
 
     

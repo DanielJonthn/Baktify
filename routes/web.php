@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TransactionDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,23 @@ Route::get('/cart', function () {
 
 Route::get('/cart/check-out');
 
-Route::get('/transaction', function () {
-    return view('pages.transaction');
-})->name('transaction');
+// Route::get('/transaction', function () {
+//     dd('Hello');
+//     return view('pages.transaction');
+// })->name('transaction');
+
+Route::get('/transaction', [TransactionDetailController::class, 'getTransaction'])->name('transaction');
+
+Route::get('/addtocard/{id}', [ProductController::class, 'addToCart'])->name('addtocart');
+
+Route::get('/updateCart/{id}', [ProductController::class, 'updateCart'])->name('updatecart');
+
+Route::get('/checkout', function() {
+    return view('pages.checkOut');
+})->name('checkout');
+
+Route::get('/confirmcheckout/{pass}', [ProductController::class, 'checkout'])->name('confirmcheckout');
+
+// Route::get('/transaction', [TransactionDetailController::class], 'getTransaction')->name('transaction');
+
+// Route::get('/transaction', [UserController::class], 'getTransaction')->name('transaction');
