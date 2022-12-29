@@ -11,11 +11,11 @@
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                  <input type="email" @if(Cookie::has('cemail')) value="{{Cookie::get('cemail')}}" @endif class="form-control" id="email" name="email" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" @if(Cookie::has('cpassword')) value="{{Cookie::get('cpassword')}}" @endif class="form-control" id="password" name="password">
                 </div>
                 <div class="my-3">
                     @if($errors->any())
@@ -27,8 +27,8 @@
                    @endif 
                </div>
                 <div class="mb-3">
-                    <input type="checkbox">
-                    <label for="">Remember Email</label>
+                    <input type="checkbox" @if(Cookie::has('cemail')) checked @endif name="remember" id="remember"/>
+                    <label for="remember">Remember Me</label>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="py-2 w-100 btn text-white" style="background-color: #5e5df0">Sign In</button>

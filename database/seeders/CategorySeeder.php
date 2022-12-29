@@ -15,13 +15,19 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::insert([
-            'name' => 'Classic'
+            'name' => 'Folk'
+        ]);
+        Category::insert([
+            'name' => 'Pop'
         ]);
         Category::insert([
             'name' => 'Rock'
         ]);
         Category::insert([
-            'name' => 'Romance'
+            'name' => 'Soft Rock'
+        ]);
+        Category::insert([
+            'name' => 'Jazz'
         ]);
 
     }

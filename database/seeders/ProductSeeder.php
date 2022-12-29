@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
             'name' => 'All My Tears',
             'description' => '"All My Tears", a song by Julie Miller with Emmylou Harris, also covered by Harris and separately covered by jazz vocalist Jimmy Scott and later on by Norwegian artist Ane Brun',
             'price' => '22000',
-            'stock' => '15',
+            'stock' => '11',
             'image' => 'AllMyTears.png',
             'category_id' => '1'
         ]);
@@ -25,9 +25,9 @@ class ProductSeeder extends Seeder
             'name' => 'Bohemian Rhapsody',
             'description' => '"Bohemian Rhapsody" is a song by the British rock band Queen, released as the lead single from their fourth album, A Night at the Opera (1975).',
             'price' => '25000',
-            'stock' => '14',
+            'stock' => '12',
             'image' => 'BohemianRhapsody.png',
-            'category_id' => '2'
+            'category_id' => '3'
         ]);
         Product::insert([
             'name' => 'Dandelions',
@@ -35,7 +35,7 @@ class ProductSeeder extends Seeder
             'price' => '23000',
             'stock' => '15',
             'image' => 'Dandelions.png',
-            'category_id' => '3'
+            'category_id' => '2'
         ]);
         Product::insert([
             'name' => 'Father and Son',
@@ -51,7 +51,7 @@ class ProductSeeder extends Seeder
             'price' => '20000',
             'stock' => '12',
             'image' => 'Frankenstein.png',
-            'category_id' => '2'
+            'category_id' => '4'
         ]);
         Product::insert([
             'name' => 'Hotel California',
@@ -67,7 +67,7 @@ class ProductSeeder extends Seeder
             'price' => '20000',
             'stock' => '11',
             'image' => 'Imagine.jpg',
-            'category_id' => '1'
+            'category_id' => '2'
         ]);
         Product::insert([
             'name' => 'Let It Be',
@@ -75,7 +75,7 @@ class ProductSeeder extends Seeder
             'price' => '30000',
             'stock' => '17',
             'image' => 'LetItBe.jpg',
-            'category_id' => '2'
+            'category_id' => '1'
         ]);
         Product::insert([
             'name' => 'Love Of My Life',
@@ -83,7 +83,7 @@ class ProductSeeder extends Seeder
             'price' => '25000',
             'stock' => '16',
             'image' => 'LoveOfMyLife.jpg',
-            'category_id' => '3'
+            'category_id' => '4'
         ]);
         Product::insert([
             'name' => 'Sweet Child O Mine',
@@ -91,7 +91,7 @@ class ProductSeeder extends Seeder
             'price' => '21000',
             'stock' => '13',
             'image' => 'SweetChildOMine.png',
-            'category_id' => '1'
+            'category_id' => '3'
         ]);
         Product::insert([
             'name' => 'Tears In Heaven',
@@ -99,7 +99,7 @@ class ProductSeeder extends Seeder
             'price' => '21000',
             'stock' => '14',
             'image' => 'TearsInHeaven.jpg',
-            'category_id' => '2'
+            'category_id' => '4'
         ]);
         Product::insert([
             'name' => 'The House Of The Rising Sun',
@@ -107,7 +107,7 @@ class ProductSeeder extends Seeder
             'price' => '20000',
             'stock' => '16',
             'image' => 'TheHouseOfTheRisingSun.jpg',
-            'category_id' => '3'
+            'category_id' => '1'
         ]);
         Product::insert([
             'name' => 'Until I Found You',
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
             'price' => '25000',
             'stock' => '15',
             'image' => 'UntilIFoundYou.png',
-            'category_id' => '1'
+            'category_id' => '2'
         ]);
         Product::insert([
             'name' => 'What A Wonderful World',
@@ -123,7 +123,7 @@ class ProductSeeder extends Seeder
             'price' => '22000',
             'stock' => '10',
             'image' => 'WhatAWonderfulWorld.jpg',
-            'category_id' => '2'
+            'category_id' => '5'
         ]);
         Product::insert([
             'name' => 'Wonderful Tonight',
@@ -131,7 +131,7 @@ class ProductSeeder extends Seeder
             'price' => '23000',
             'stock' => '11',
             'image' => 'WonderfulTonight.jpg',
-            'category_id' => '3'
+            'category_id' => '4'
         ]);
     }
 }

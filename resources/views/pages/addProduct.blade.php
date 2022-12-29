@@ -86,7 +86,6 @@
                         <label for="category" class="form-label d-flex align-items-center" style="width: 25%">Category Name</label>
                         <select class="form-select w-75" id="category" name="category" aria-label="Default select example">
                             <?php $categories = DB::table('categories')->get(); ?>
-                        <option selected>Category</option>
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach

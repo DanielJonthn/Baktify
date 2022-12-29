@@ -19,16 +19,16 @@ class UserSeeder extends Seeder
             'name' => 'Daniel',
             'email' => 'daniel@email.com',
             'password' => Hash::make('danielasd'),
-            'address' => 'Dummy address1',
-            'phone' => '123123123',
+            'address' => 'Dummy address 01',
+            'phone' => '123123123123',
             'role' => 'Admin'
         ]);
         User::insert([
             'name' => 'Ryanto',
             'email' => 'ryanto@email.com',
             'password' => Hash::make('ryantoasd'),
-            'address' => 'Dummy address2',
-            'phone' => '123',
+            'address' => 'Dummy address 02',
+            'phone' => '12345678910',
             'role' => 'Member'
         ]);
     }

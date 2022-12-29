@@ -25,32 +25,12 @@
             </form>
         </div>
     </div>
-
         <div class="row row-cols-4">
-            {{-- @for($i = 0;$i < 10; $i++)
-            <div class="col">
-                <div class="card m-3" style="width: 18rem;">
-                    <img src="/assets/UntilIFoundYou.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a class="stretched-link" href="{{route('productdetail', $product->id)}}"></a>
-                        <div class="d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title" style="z-index: 1">Album Title</h5>
-                            <p class="card-text" style="color: gray; z-index: 1">Price: Rp</p>
-                            <p class="card-text bg-primary p-2" style="border-radius:50px; z-index: 1">Genre</p>
-                        </div>
-                        <hr>
-                    <div class="d-flex" style="transform: (0)">
-                        <a href="{{route('cart')}}" class="btn btn-primary m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Add to cart</a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            @endfor --}}
+           
             @foreach ($products as $product)
             <div class="col">
                 <div class="card m-3" style="width: 18rem;">
                 <img src="{{('/storage/images/'.$product->image)}}" class="card-img-top" alt="...">
-                    <!-- <img src="/assets/{{$product->image}}" class="card-img-top" alt="..."> -->
                     <div class="card-body">
                         <a class="stretched-link" href="{{route('productdetail', $product->id)}}"></a>
                         <div class="d-flex flex-column justify-content-center align-items-center">
@@ -59,9 +39,15 @@
                             <p class="card-text text-white p-2 px-3" style="border-radius:50px; z-index: 1; font-size: 80%; background-color: #5e5df0">{{$product->category->name}}</p>
                         </div>
                         <hr>
-                        <div class="d-flex" style="transform: (0)">
-                            <a href="{{route('addtocart', $product->id)}}" class="btn text-white m-0" style="border-radius: 50px; font-size: 13px; z-index: 1; background-color: #5da5f0">Add to cart</a>
-                        </div>
+                        @if($product->stock == 0)
+                            <div class="d-flex" style="transform: (0)">
+                                <p class="m-0 p-1" style="z-index: 1;">Product Unavailable</p>
+                            </div>
+                        @else
+                            <div class="d-flex" style="transform: (0)">
+                                <a href="{{route('addtocart', $product->id)}}" class="btn text-white m-0" style="border-radius: 50px; font-size: 13px; z-index: 1; background-color: #5da5f0">Add to cart</a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -71,7 +57,7 @@
             <p class="m-0">Showing 1 to {{count($products)}} of {{count($totalproducts)}} results</p>
             {{$products->links()}}
         </div>
-</div>
+    </div>
 
 {{-- Admin --}}
 <div class="container">
@@ -121,5 +107,27 @@
     if('{{Session::has('alert')}}'){
         alert('{{Session::get('alert')}}');
     }
+    if('{{Session::has('error')}}'){
+        alert('{{Session::get('error')}}');
+    }
 </script>
 @endsection
+ {{-- @for($i = 0;$i < 10; $i++)
+            <div class="col">
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="/assets/UntilIFoundYou.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a class="stretched-link" href="{{route('productdetail', $product->id)}}"></a>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title" style="z-index: 1">Album Title</h5>
+                            <p class="card-text" style="color: gray; z-index: 1">Price: Rp</p>
+                            <p class="card-text bg-primary p-2" style="border-radius:50px; z-index: 1">Genre</p>
+                        </div>
+                        <hr>
+                    <div class="d-flex" style="transform: (0)">
+                        <a href="{{route('cart')}}" class="btn btn-primary m-0" style="border-radius: 50px; font-size: 13px; z-index: 1">Add to cart</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            @endfor --}}

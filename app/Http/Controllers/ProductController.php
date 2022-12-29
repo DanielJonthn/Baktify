@@ -106,10 +106,14 @@ class ProductController extends Controller
 
     public function addToCart($id){
         $product = Product::findOrFail($id);
-
         $cart = session()->get('CART'.Auth::user()->id);
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            if($cart[$id]['quantity']+1 > $product->stock){
+                return redirect()->back()->with('error', 'The product doesnt have enough stock');
+            }
+            else{
+                $cart[$id]['quantity']++;
+            }
         } else {
             $cart[$id] = [
                 // "name" => $product->name,
@@ -125,7 +129,11 @@ class ProductController extends Controller
     }
 
     public function updateCart($id, Request $request){
-        if($request->number <= 0){
+        $product = Product::findOrFail($id);
+        if($product->stock < $request->number){
+            return redirect()->back()->with('alert', 'The product doesnt have enough stock');
+        }
+        else if($request->number <= 0){
                 $cart = session()->get('CART'.Auth::user()->id);
                     unset($cart[$id]);
                     session()->put('CART'.Auth::user()->id, $cart);
@@ -164,6 +172,9 @@ class ProductController extends Controller
                 $newTransaction->transaction_detail_id = $newTransactionDetail->id;
                 $newTransaction->product_id = $details['id'];
                 $newTransaction->quantity = $details['quantity'];
+                $product = Product::findOrFail($details['id']);
+                $product->stock = $product->stock - $details['quantity'];
+                $product->save();
                 $newTransaction->save();
             }
             session()->forget('CART'.Auth::user()->id);

@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Cookie;
 
 class UserController extends Controller
 {
@@ -61,6 +63,11 @@ class UserController extends Controller
         ]);
         // $email = $request->input('email');
         // $password = $request->input('password');
+        if($request->has('remember')){
+            Cookie::queue('cemail', $request->email,30);
+            Cookie::queue('cpassword', $request->password,30);
+        }
+        
         if(!Auth::attempt($credential)){
             return redirect()->back()->withErrors('Invalid Credential!');
         }
@@ -68,7 +75,15 @@ class UserController extends Controller
         // if(!Auth::attempt(['user_email' => $email, 'user_password' => $password])){
         //     return redirect()->back()->withErrors('Invalid Credential!');
         // }
-
+        $cart = session()->get('CART'.Auth::user()->id);
+        if($cart)
+        foreach (session('CART'.Auth::user()->id) as $id => $details){
+            $product = Product::findOrFail($details['id']);
+            if($product->stock == 0 || $product->stock < 1){
+                unset($cart[$details['id']]);
+            }
+        }
+        session()->put('CART'.Auth::user()->id, $cart);
         return redirect()->route('home');
     }
 
@@ -89,7 +104,7 @@ class UserController extends Controller
 
         $updateData = [
             'name' => $data['username'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['confirm']),
             'address' => $data['address'],
             'phone' => $data['phone']
         ];
