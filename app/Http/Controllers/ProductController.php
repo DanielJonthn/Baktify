@@ -18,6 +18,10 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $totalproducts = 0;
+        $productsExists = Product::where('name', 'LIKE', '%'.$request->search.'%')->exists();
+        if(!$productsExists){
+            return redirect()->route('product')->with('notFound', $request->search);
+        }
         if($request->has('search')){
             $products = Product::where('name', 'LIKE', '%'.$request->search.'%')->paginate(12);
             $products->appends($request->all());
@@ -180,6 +184,19 @@ class ProductController extends Controller
             session()->forget('CART'.Auth::user()->id);
             return redirect()->route('home')->with('alert', 'You will receive our products soon! Thank you for shopping with us!');
         }
+    }
+
+    public function showCart(){
+        $cart = session()->get('CART'.Auth::user()->id);
+        if($cart)
+        foreach (session('CART'.Auth::user()->id) as $id => $details){
+            $product = Product::findOrFail($details['id']);
+            if($product->stock == 0 || $product->stock < 1){
+                unset($cart[$details['id']]);
+            }
+        }
+        session()->put('CART'.Auth::user()->id, $cart);
+        return view('pages.cart');
     }
     
 

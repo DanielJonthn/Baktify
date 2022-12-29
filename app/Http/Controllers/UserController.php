@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -53,7 +54,7 @@ class UserController extends Controller
 
     public function logout() {
         Auth::logout();
-        return redirect('home');
+        return redirect()->route('home');
       }
 
     public function submitLogin(Request $request){
@@ -113,6 +114,9 @@ class UserController extends Controller
         return redirect()->route('profile')->with('alert', 'Success Update Profile');
     }
 
+    public function checkOutPage(){
+        return view('pages.checkOut');
+    }
     
 
 

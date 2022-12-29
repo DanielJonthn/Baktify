@@ -25,6 +25,11 @@
             </form>
         </div>
     </div>
+    @if(Session::has('notFound'))
+    <div style="height: 100vh">
+        <h5>No product match for '{{Session::get('notFound')}}'</h5>
+    </div>
+    @else
         <div class="row row-cols-4">
            
             @foreach ($products as $product)
@@ -57,6 +62,7 @@
             <p class="m-0">Showing 1 to {{count($products)}} of {{count($totalproducts)}} results</p>
             {{$products->links()}}
         </div>
+    @endif
     </div>
 
 {{-- Admin --}}
@@ -75,6 +81,11 @@
         </div>
     </div>
 
+    @if(Session::has('notFound'))
+    <div style="height: 100vh">
+        <h5>No product match for '{{Session::get('notFound')}}'</h5>
+    </div>
+    @else
         <div class="row row-cols-4">
             @foreach ($products as $product)
             <div class="col">
@@ -101,6 +112,7 @@
             <p class="m-0">Showing 1 to {{count($products)}} of {{count($totalproducts)}} results</p>
             {{$products->links()}}
         </div>
+        @endif
 </div>
 
 <script>

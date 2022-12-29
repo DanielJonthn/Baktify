@@ -18,14 +18,6 @@ use App\Http\Controllers\TransactionDetailController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/checkout', function() {
-    return view('pages.checkOut');
-})->name('checkout');
-
-Route::get('/home', function () {
     return view('pages.homePage');
 })->name('home');
 
@@ -36,10 +28,6 @@ Route::get('/aboutus', function () {
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 
 Route::get('/product/detail/{id}', [ProductController::class, 'showDetail'])->name('productdetail');
-
-// Route::get('/product/add', function () {
-//     return view('pages.addProduct');
-// })->name('addproduct');
 
 Route::get('product/add', [ProductController::class, 'addProduct'])->name('addproduct');
 
@@ -63,14 +51,6 @@ Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editpr
 
 Route::post('/editprofile', [UserController::class, 'submitEdit'])->name('submitedit');
 
-// Route::get('/login', function () {
-//     return view('pages.login');
-// })->name('login');
-
-// Route::get('/register', function () {
-//     return view('pages.register');
-// })->name('register');
-
 Route::get('/register', [UserController::class,'register'])->name('register');
 
 Route::post('/register', [UserController::class,'submitRegister'])->name('submitregister');
@@ -79,16 +59,7 @@ Route::get('/login', [UserController::class,'login'])->name('login');
 
 Route::post('/login',[UserController::class,'submitLogin'])->name('submitLogin');
 
-Route::get('/cart', function () {
-    return view('pages.cart');
-})->name('cart');
-
-Route::get('/cart/check-out');
-
-// Route::get('/transaction', function () {
-//     dd('Hello');
-//     return view('pages.transaction');
-// })->name('transaction');
+Route::get('/cart', [ProductController::class, 'showCart'])->name('cart');
 
 Route::get('/transaction', [TransactionDetailController::class, 'getTransaction'])->name('transaction');
 
@@ -96,12 +67,6 @@ Route::get('/addtocard/{id}', [ProductController::class, 'addToCart'])->name('ad
 
 Route::get('/updateCart/{id}', [ProductController::class, 'updateCart'])->name('updatecart');
 
-Route::get('/checkout', function() {
-    return view('pages.checkOut');
-})->name('checkout');
+Route::get('/checkout', [ProductController::class, 'checkOutPage'])->name('checkout');
 
 Route::get('/confirmcheckout/{pass}', [ProductController::class, 'checkout'])->name('confirmcheckout');
-
-// Route::get('/transaction', [TransactionDetailController::class], 'getTransaction')->name('transaction');
-
-// Route::get('/transaction', [UserController::class], 'getTransaction')->name('transaction');
