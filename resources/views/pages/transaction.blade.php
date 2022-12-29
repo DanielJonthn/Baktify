@@ -23,7 +23,6 @@
                 @foreach ($transaction->product as $product)
                 <?php $total += $product->price * $product->pivot->quantity ?>
                 <tr class="">
-                    <!-- <th scope="row">1</th> -->
                     <td class="">
                         <div class="d-flex align-items-center">
                             <img src="{{('/storage/images/'.$product->image)}}" class="img-fluid" style="max-width: 50px; border-radius: 500px" alt="">

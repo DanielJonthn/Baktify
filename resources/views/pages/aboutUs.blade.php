@@ -8,7 +8,8 @@
     <div class="mb-4">
         <h4 class="text-center" style="color: grey">"Baktify started form our love for music and album, we create Baktify to spread the love in our music community, 
             we started off from street near Rawa Belong street and now we have the most diverse collection of albums and 
-            musics. We won't stop until music spreads all over the world"</h4>
+            musics. We won't stop until music spreads all over the world"
+        </h4>
     </div>
     <div class="text-center"><h4>Conny Blue, CEO Baktify</h4></div>
 </div>

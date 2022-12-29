@@ -22,7 +22,6 @@ class TransactionSeeder extends Seeder
             'product_id' => '2',
             'quantity' => '5'
         ]);
-
         Transaction::insert([
             'transaction_detail_id' => '2',
             'product_id' => '9',

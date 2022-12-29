@@ -22,7 +22,6 @@
             <?php $total += $product->price * $details['quantity'] ?>
             <form action="/updateCart/{{$product->id}}">
                 <tr class="">
-                    <!-- <th scope="row">1</th> -->
                     <td class="">
                         <div class="d-flex align-items-center">
                             <img src="{{('/storage/images/'.$product->image)}}" class="img-fluid" style="max-width: 50px; border-radius: 500px" alt="">

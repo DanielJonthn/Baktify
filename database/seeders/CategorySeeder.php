@@ -29,6 +29,5 @@ class CategorySeeder extends Seeder
         Category::insert([
             'name' => 'Jazz'
         ]);
-
     }
 }

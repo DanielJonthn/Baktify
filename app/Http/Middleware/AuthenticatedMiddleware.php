@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class MemberMiddleware
+class AuthenticatedMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,12 +16,9 @@ class MemberMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
-        if(Auth::user()->role == 'Member'){
-
-        }
-        else{
-            return redirect()->route('home');
+    {   
+        if(!Auth::check()){
+            return redirect()->route('login')->with('notAuthorized', 'Please sign in to add to cart!');
         }
         return $next($request);
     }

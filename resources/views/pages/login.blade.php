@@ -10,19 +10,21 @@
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email address</label>
-                  <input type="email" @if(Cookie::has('cemail')) value="{{Cookie::get('cemail')}}" @endif class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" @if(Cookie::has('cemail')) value="{{Cookie::get('cemail')}}" @endif class="form-control" id="email" name="email" aria-describedby="emailHelp">
                 </div>
+
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" @if(Cookie::has('cpassword')) value="{{Cookie::get('cpassword')}}" @endif class="form-control" id="password" name="password">
                 </div>
+
                 <div class="my-3">
                     @if($errors->any())
-                   <div class="d-flex flex-column text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">
-                       @foreach($errors->all() as $error)
-                       <p class="m-0">{{ $error }}</p>
-                       @endforeach
+                    <div class="d-flex flex-column text-danger p-2" style="border-radius:10px; background-color: #ffc7d0">
+                        @foreach($errors->all() as $error)
+                            <p class="m-0">{{ $error }}</p>
+                        @endforeach
                    </div>
                    @endif 
                </div>
@@ -45,4 +47,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    if('{{Session::has('notAuthorized')}}'){
+        alert('{{Session::get('notAuthorized')}}');
+    }
+</script>
 @endsection

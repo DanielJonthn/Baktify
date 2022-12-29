@@ -1,4 +1,5 @@
 {{-- Guest Navbar --}}
+@if(!Auth::check())
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" style="">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,7 +14,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
                 </li>
-                <li class="nav-item"></li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{route('product')}}">Products</a>
                 </li>
             </ul>
@@ -26,6 +27,7 @@
 </nav>
 
 {{-- Member Navbar --}}
+@elseif(Auth::user()->role == 'Member')
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,6 +65,7 @@
 </nav>
 
 {{-- Admin Navbar --}}
+@elseif(Auth::user()->role == 'Admin')
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -80,18 +83,19 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
                     </li>
-                    <li class="nav-item"></li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('product')}}">Products</a>
                     </li>
-                    <li class="nav-item"></li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('addcategory')}}">Add Category</a>
                     </li>
                 </ul>
             </div>
             <div class="me-5 d-flex flex-column" style="color: grey">
                 <p class="m-0" style="color: grey">Admin</p>
-                    <a class="nav-link" href="{{route('profile')}}">View Profile</a>
+                <a class="nav-link" href="{{route('profile')}}">View Profile</a>
             </div>
         </div>
     </div>
 </nav>
+@endif

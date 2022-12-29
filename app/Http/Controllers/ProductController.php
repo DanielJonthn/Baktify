@@ -34,8 +34,7 @@ class ProductController extends Controller
         return view('pages.productPage', compact('products', 'totalproducts'));
     }
 
-    public function showDetail($id)
-    {
+    public function showDetail($id){
         $productDetail = Product::findOrFail($id);
         return view('pages.productDetail', compact('productDetail'));
     }
@@ -45,7 +44,6 @@ class ProductController extends Controller
         return view('pages.editProduct', compact('product'));
     }
 
-    //submit product belum bisa gambar, tanyain dulu tentang storage
     public function submitProduct(Request $request, $id){
         $product = Product::findOrFail($id);
         $data = request()->validate([
@@ -186,6 +184,10 @@ class ProductController extends Controller
         }
     }
 
+    public function checkOutPage(){
+        return view('pages.checkOut');
+    }
+
     public function showCart(){
         $cart = session()->get('CART'.Auth::user()->id);
         if($cart)
@@ -197,72 +199,5 @@ class ProductController extends Controller
         }
         session()->put('CART'.Auth::user()->id, $cart);
         return view('pages.cart');
-    }
-    
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
-    {
-        //
     }
 }

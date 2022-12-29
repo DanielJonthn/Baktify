@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class MemberMiddleware
+class OnlyGuestMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,12 +17,11 @@ class MemberMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role == 'Member'){
-
+        if(!Auth::check()){
+            return $next($request);
         }
-        else{
+        else {
             return redirect()->route('home');
         }
-        return $next($request);
     }
 }
