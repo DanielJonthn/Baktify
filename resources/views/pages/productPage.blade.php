@@ -25,9 +25,10 @@
     @else
         <div class="row row-cols-4">
             @foreach ($products as $product)
+            @if($product->is_deleted == 0)
             <div class="col">
                 <div class="card m-3" style="width: 18rem;">
-                <img src="{{('/storage/images/'.$product->image)}}" class="card-img-top" alt="...">
+                    <img src="{{('/storage/images/'.$product->image)}}" class="card-img-top" style="max-height: 285px" alt="...">
                     <div class="card-body">
                         <a class="stretched-link" href="{{route('productdetail', $product->id)}}"></a>
                         <div class="d-flex flex-column justify-content-center align-items-center">
@@ -37,17 +38,18 @@
                         </div>
                         <hr>
                         @if($product->stock == 0)
-                            <div class="d-flex" style="transform: (0)">
-                                <p class="m-0 p-1" style="z-index: 1;">Product Unavailable</p>
-                            </div>
+                        <div class="d-flex" style="transform: (0)">
+                            <p class="m-0 p-1" style="z-index: 1;">Product Unavailable</p>
+                        </div>
                         @else
-                            <div class="d-flex" style="transform: (0)">
-                                <a href="{{route('addtocart', $product->id)}}" class="btn text-white m-0" style="border-radius: 50px; font-size: 13px; z-index: 1; background-color: #5da5f0">Add to cart</a>
-                            </div>
+                        <div class="d-flex" style="transform: (0)">
+                            <a href="{{route('addtocart', $product->id)}}" class="btn text-white m-0" style="border-radius: 50px; font-size: 13px; z-index: 1; background-color: #5da5f0">Add to cart</a>
+                        </div>
                         @endif
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
         <div class="d-flex justify-content-between align-items-center">
@@ -80,9 +82,10 @@
     @else
         <div class="row row-cols-4">
             @foreach ($products as $product)
+            @if($product->is_deleted == 0)
             <div class="col">
                 <div class="card m-3" style="width: 18rem;">
-                    <img src="{{('/storage/images/'.$product->image)}}" class="card-img-top" alt="...">
+                    <img src="{{('/storage/images/'.$product->image)}}" class="card-img-top" style="max-height: 285px" alt="...">
                     <div class="card-body">
                         <a class="stretched-link" href="{{route('productdetail', $product->id)}}"></a>
                         <div class="d-flex flex-column justify-content-center align-items-center">
@@ -98,6 +101,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
         <div class="d-flex justify-content-between align-items-center">

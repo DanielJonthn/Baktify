@@ -69,7 +69,9 @@ class ProductController extends Controller
     }
 
     public function removeProduct($id){
-        Product::where('id', '=', $id)->delete();
+        $product = Product::findOrFail($id);
+        $product->is_deleted = true;
+        $product->save();
         return redirect()->back()->with('alert', 'Success remove product');
     }
 
@@ -118,11 +120,8 @@ class ProductController extends Controller
             }
         } else {
             $cart[$id] = [
-                // "name" => $product->name,
                 "id" => $id,
                 "quantity" => 1
-                // "price" => $product->price,
-                // "image" => $product->image
             ];
         }
         session()->put('CART'.Auth::user()->id, $cart);
@@ -149,25 +148,13 @@ class ProductController extends Controller
     }
 
     public function checkout($pass, Request $request){
-        // $cart = session()->get('CART'.Auth::user()->id);
-        // dd(session('CART'.Auth::user()->id));
-        // for($i = 0; $i < count($cart); $i++){
-        //     dump($cart[1]);        
-        // }
-        // foreach (session('CART'.Auth::user()->id) as $id => $details){
-        //     dump($details['id']);  
-        // }
-        // dd();
         if($pass != $request->pass){
             return redirect()->back()->withErrors('Passcode does not match');
         }
         else{
-            // return redirect()->back()->withErrors('Passcode matches');
             $newTransactionDetail = new TransactionDetail();
             $newTransactionDetail->user_id = Auth::user()->id;
             $newTransactionDetail->date = \Carbon\Carbon::now();
-            // dump($newTransactionDetail->date);
-            // dd($newTransactionDetail->date->shiftTimezone('Asia/Jakarta'));
             $newTransactionDetail->save();
             foreach (session('CART'.Auth::user()->id) as $id => $details){
                 $newTransaction = new Transaction();
