@@ -1,7 +1,7 @@
 @extends('temp')
 
 @section('title', 'Home')
-{{-- Nggak pasti, tanyain dulu --}}
+
 <style>
     .linefade{
     display:block;
