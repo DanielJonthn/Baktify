@@ -21,9 +21,5 @@ class TransactionDetailSeeder extends Seeder
             'user_id' => '2',
             'date' => '2022-08-12'
         ]);
-        TransactionDetail::insert([
-            'user_id' => '1',
-            'date' => '2022-08-13'
-        ]);
     }
 }
