@@ -47,7 +47,7 @@ class ProductController extends Controller
     public function submitProduct(Request $request, $id){
         $product = Product::findOrFail($id);
         $data = request()->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'description' => 'required|min:15|max:500',
             'price' => 'required|numeric|min:1000|max:10000000',
             'stock' => 'required|numeric|min:1|max:10000'
