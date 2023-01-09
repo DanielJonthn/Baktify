@@ -53,16 +53,14 @@ class ProductController extends Controller
             'stock' => 'required|numeric|min:1|max:10000'
         ]);
 
+        $images = $request->image->getClientOriginalName();
+        $file = $request->file('image')->storeAs('public/images', $images);
         $updateData = [
             'description' => $data['description'],
             'price' => $data['price'],
-            'stock' => $data['stock']
+            'stock' => $data['stock'],
+            'image' => $images
         ];
-        if(request('image')){
-            $images = $request->image->getClientOriginalName();
-            $file = $request->file('image')->storeAs('public/images', $images);
-            $updateData['image'] = $images;
-        }
         $product->update($updateData);
 
         return redirect()->route('product');
