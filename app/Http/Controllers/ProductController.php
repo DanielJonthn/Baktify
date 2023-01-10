@@ -129,6 +129,9 @@ class ProductController extends Controller
 
     public function updateCart($id, Request $request){
         $product = Product::findOrFail($id);
+        if($request->number == null){
+            return redirect()->back();
+        }
         if($product->stock < $request->number){
             return redirect()->back()->with('alert', 'The product doesnt have enough stock');
         }
